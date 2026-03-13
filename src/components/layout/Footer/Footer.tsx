@@ -10,7 +10,7 @@ export default function Footer() {
             <div className={styles.hexDecor} />
             <div className={styles.footerGrid}>
                 <div className={styles.footerBrand}>
-                    <Image src="/images/logo-horizontal.png" alt="BLOCKERA" width={180} height={55} className={styles.footerLogo} />
+                    <Image src="/images/logo-horizontal-black.png" alt="BLOCKERA" width={180} height={55} className={styles.footerLogo} />
                     <p className={styles.footerSlogan}>&ldquo;Beyond the chain&rdquo;</p>
                     <p className={styles.footerTagline}>
                         Thương hiệu cá nhân là điểm chạm đầu tiên tạo nên uy tín bền vững

@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/images/logo-vertical.png', type: 'image/png' },
+      { url: '/images/logo-vertical-black.png', type: 'image/png' },
     ],
-    apple: '/images/logo-vertical.png',
+    apple: '/images/logo-vertical-black.png',
   },
   openGraph: {
     type: 'website',
@@ -77,7 +77,7 @@ const jsonLd = {
   "name": SITE_NAME,
   "alternateName": "Hellen Thanh Thùy - Kiến trúc sư chuẩn hóa hành vi",
   "url": SITE_URL,
-  "logo": `${SITE_URL}/images/logo-horizontal.png`,
+  "logo": `${SITE_URL}/images/logo-horizontal-black.png`,
   "image": `${SITE_URL}/images/og-image.png`,
   "description": SITE_DESC,
   "address": {

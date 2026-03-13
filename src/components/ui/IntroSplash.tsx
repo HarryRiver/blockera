@@ -79,7 +79,7 @@ export default function IntroSplash() {
                 {/* Logo: starts white, transitions to original color */}
                 <div className={`${styles.logo} ${phase >= 2 ? styles.logoShow : ''} ${phase >= 3 ? styles.logoColor : ''}`}>
                     <Image
-                        src="/images/logo-vertical.png"
+                        src="/images/logo-vertical-black.png"
                         alt="BLOCKERA"
                         width={90}
                         height={90}

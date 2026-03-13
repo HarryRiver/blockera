@@ -49,7 +49,7 @@ export default async function BlogDetailPage({ params }: Props) {
         "datePublished": post.publishedAt,
         "dateModified": post.updatedAt,
         "author": { "@type": "Person", "name": "Hellen Thanh Thúy" },
-        "publisher": { "@type": "Organization", "name": "BLOCKERA Education", "logo": { "@type": "ImageObject", "url": "https://blockeraedu.com/images/logo-horizontal.png" } },
+        "publisher": { "@type": "Organization", "name": "BLOCKERA Education", "logo": { "@type": "ImageObject", "url": "https://blockeraedu.com/images/logo-horizontal-black.png" } },
     };
 
     return (

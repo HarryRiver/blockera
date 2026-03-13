@@ -95,7 +95,8 @@ export default function Header() {
     ) : null;
 
     const isNewsPage = pathname.startsWith('/tin-tuc');
-    const headerClasses = `${styles.header} ${scrolled || isNewsPage ? styles.scrolled : ''}`;
+    const useScrolledHeader = scrolled || isNewsPage;
+    const headerClasses = `${styles.header} ${useScrolledHeader ? styles.scrolled : ''}`;
 
     return (
         <>
@@ -103,7 +104,7 @@ export default function Header() {
                 <div className={styles.headerInner}>
                     <Link href="/" className={styles.logo}>
                         <Image
-                            src="/images/logo-horizontal.png"
+                            src={useScrolledHeader ? "/images/logo-horizontal-orange.png" : "/images/logo-horizontal-black.png"}
                             alt="BLOCKERA Education"
                             width={180}
                             height={45}
