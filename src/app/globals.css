@@ -1,42 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&family=Great+Vibes&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ===== Orange/Peach Palette ===== */
+  --midnight: #1a0f05;
+  --navy: #30170a;
+  --navy-mid: #4a2511;
+  --navy-light: #6a3518;
+  --steel: #8a4822;
+
+  /* Orange accents */
+  --chrome: #f06a24;
+  --chrome-light: #f5884e;
+  --chrome-pale: #fac2a3;
+  --silver: #fcd5c0;
+
+  /* Peach/Orange backgrounds */
+  --lavender: #f9ab81;
+  --lavender-light: #fcd6c4;
+  --lavender-bg: #fdf1ea;
+  --pearl: #fff6f0;
+  --ivory: #fffbfa;
+
+  /* Text */
+  --text-dark: #1a1a2e;
+  --text-body: #4a4a65;
+  --text-muted: #7a7a95;
+  --white: #ffffff;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 30px rgba(36, 16, 12, 0.05);
+  --shadow-card: 0 8px 40px rgba(36, 16, 12, 0.07);
+  --shadow-hover: 0 16px 50px rgba(36, 16, 12, 0.11);
+  --shadow-chrome: 0 4px 25px rgba(240, 106, 36, 0.2);
+  --shadow-lavender: 0 8px 40px rgba(249, 171, 129, 0.25);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 50px;
+  --radius-round: 50%;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: 0.2s var(--ease-out);
+  --transition-base: 0.45s var(--ease-out);
+  --transition-slow: 0.7s var(--ease-out);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html,
-body {
-  max-width: 100vw;
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
   overflow-x: hidden;
+  max-width: 100vw;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+  color: var(--text-body);
+  background-color: var(--ivory);
+  line-height: 1.8;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
+  color: var(--text-dark);
+  line-height: 1.1;
+  font-weight: 700;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+h1 { font-size: 3.8rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+h2 { font-size: 3rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+h3 { font-size: 1.5rem; font-weight: 600; letter-spacing: 0.02em; }
+
+a { color: inherit; text-decoration: none; transition: color var(--transition-fast); }
+img { max-width: 100%; height: auto; display: block; }
+button { font-family: 'Be Vietnam Pro', sans-serif; cursor: pointer; border: none; outline: none; }
+ul, ol { list-style: none; }
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  overflow: visible;
+}
+
+/* ===== Section Headers — Ha Phuong Style ===== */
+.section-label {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--chrome);
+  margin-bottom: 0.5rem;
+  display: block;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  position: relative;
+  line-height: 1.15;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 45px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--chrome), transparent);
+  margin-top: 1rem;
+}
+
+.section-title.center { text-align: center; }
+.section-title.center::after { margin-left: auto; margin-right: auto; }
+
+/* Cursive subtitle */
+.section-script {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  color: var(--chrome);
+  margin-top: -0.1rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  opacity: 0.7;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.section-subtitle.center { margin-left: auto; margin-right: auto; text-align: center; }
+
+/* ===== Scroll Reveal Animations ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
+.reveal-delay-4 { transition-delay: 0.48s; }
+
+/* ===== Responsive ===== */
+@media (max-width: 1023px) {
+  h1 { font-size: 2.6rem; }
+  h2 { font-size: 2.2rem; }
+  .container { padding: 0 1.5rem; }
+  .section-title { font-size: 2.2rem; }
+}
+
+@media (max-width: 767px) {
+  html { font-size: 15px; }
+  h1 { font-size: 2rem; letter-spacing: 0.04em; }
+  h2 { font-size: 1.7rem; }
+  .container { padding: 0 1.25rem; }
+  .section-title { font-size: 1.7rem; letter-spacing: 0.04em; }
+  .section-script { font-size: 1.1rem; }
+}
+
+/* ===== Intro → Page Entrance Coordination ===== */
+body:not(.intro-done) > header,
+body:not(.intro-done) > main {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.intro-done > header {
+  animation: pageEnter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+body.intro-done > main {
+  animation: pageEnter 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }

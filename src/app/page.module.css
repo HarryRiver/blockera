@@ -44,7 +44,7 @@
   line-height: 48px;
   letter-spacing: -2.4px;
   text-wrap: balance;
-  color: var(--text-primary);
+  color: var(--text-dark);
 }
 
 .intro p {
@@ -57,7 +57,7 @@
 
 .intro a {
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--text-dark);
 }
 
 .ctas {
@@ -84,7 +84,7 @@
 }
 
 a.primary {
-  background: var(--text-primary);
+  background: var(--text-dark);
   color: var(--background);
   gap: 8px;
 }

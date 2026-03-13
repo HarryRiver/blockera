@@ -1,0 +1,832 @@
+/* ===========================================
+   BLOCKERA Admin — Professional CMS
+   =========================================== */
+
+/* Login Page */
+.loginPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #060A18 0%, #0E1330 100%);
+}
+
+.loginForm {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 3rem 2.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+}
+
+.loginIcon {
+    font-size: 2rem;
+    color: var(--chrome, #A89174);
+    margin-bottom: 1.5rem;
+}
+
+.loginForm h1 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+}
+
+.loginForm p {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.85rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.loginInput {
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    transition: border-color 0.3s ease;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.loginInput::placeholder { color: rgba(255,255,255,0.25); }
+.loginInput:focus { outline: none; border-color: var(--chrome, #A89174); }
+
+.loginBtn {
+    width: 100%;
+    padding: 0.9rem;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.25);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.loginBtn:hover {
+    background: white;
+    color: #060A18;
+    border-color: white;
+}
+
+/* ===========================================
+   LAYOUT
+   =========================================== */
+.admin {
+    display: flex;
+    min-height: 100vh;
+    background: #F8F7F4;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: #060A18;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.sidebarBrand {
+    padding: 1.75rem 1.25rem 1.25rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.sidebarBrand h2 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.2rem;
+}
+
+.sidebarBrand span {
+    font-size: 0.6rem;
+    color: var(--chrome, #A89174);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.sidebarNav {
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.navBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.navBtn:hover { color: white; background: rgba(255,255,255,0.04); }
+
+.navActive {
+    color: white !important;
+    background: rgba(168,145,116,0.12) !important;
+    border-left: 2px solid var(--chrome, #A89174);
+}
+
+.badge {
+    margin-left: auto;
+    background: var(--chrome, #A89174);
+    color: white;
+    font-size: 0.6rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+/* Stats */
+.sidebarStats {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.statNum {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.statUnread { color: var(--chrome, #A89174); }
+.statRead { color: #2A9D8F; }
+
+.statLabel {
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.25rem;
+    background: transparent;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.3);
+    font-size: 0.72rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.logoutBtn:hover { color: #E91E63; }
+
+/* ===========================================
+   MAIN CONTENT
+   =========================================== */
+.main {
+    flex: 1;
+    padding: 1.75rem 2rem;
+    overflow-y: auto;
+    min-width: 0;
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+}
+
+.topBar h1 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.6rem;
+    color: #1B1B3A;
+    font-weight: 400;
+}
+
+.topActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.toolBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 1rem;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: rgba(27,27,58,0.6);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toolBtn:hover {
+    border-color: var(--chrome, #A89174);
+    color: var(--chrome, #A89174);
+}
+
+.toolBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinning { animation: spin 1s linear infinite; }
+
+/* ===========================================
+   FILTER BAR
+   =========================================== */
+.filterBar {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 8px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.searchWrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85rem;
+    color: rgba(27,27,58,0.3);
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.6rem 0.75rem 0.6rem 2.2rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: #1B1B3A;
+    transition: border-color 0.2s;
+}
+
+.searchInput:focus { outline: none; border-color: var(--chrome, #A89174); }
+.searchInput::placeholder { color: rgba(27,27,58,0.25); }
+
+.clearSearch {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(27,27,58,0.3);
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.filterGroup label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(27,27,58,0.4);
+}
+
+.filterGroup select {
+    padding: 0.55rem 0.8rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    color: #1B1B3A;
+    background: white;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.filterGroup select:focus { outline: none; border-color: var(--chrome, #A89174); }
+
+/* ===========================================
+   BULK ACTIONS
+   =========================================== */
+.bulkBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    background: rgba(168,145,116,0.08);
+    border: 1px solid rgba(168,145,116,0.15);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--chrome, #A89174);
+    font-weight: 500;
+}
+
+.bulkActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.bulkDelete {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.4rem 0.8rem;
+    background: #E91E63;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.bulkDelete:hover { opacity: 0.85; }
+
+.bulkCancel {
+    padding: 0.4rem 0.8rem;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 4px;
+    font-size: 0.7rem;
+    color: rgba(27,27,58,0.5);
+    cursor: pointer;
+}
+
+/* ===========================================
+   RESULTS BAR
+   =========================================== */
+.resultsBar {
+    font-size: 0.72rem;
+    color: rgba(27,27,58,0.35);
+    margin-bottom: 0.5rem;
+    padding: 0 0.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ===========================================
+   TABLE HEADER & LIST
+   =========================================== */
+.tableHeader {
+    display: grid;
+    grid-template-columns: 36px 1fr 1.2fr 0.8fr 1.5fr 0.7fr 80px;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background: rgba(27,27,58,0.03);
+    border-radius: 6px;
+    margin-bottom: 0.25rem;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(27,27,58,0.4);
+    align-items: center;
+}
+
+.tableHeader input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--chrome, #A89174);
+    cursor: pointer;
+}
+
+.contactList {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactRow {
+    display: grid;
+    grid-template-columns: 36px 1fr 1.2fr 0.8fr 1.5fr 0.7fr 80px;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.03);
+    border-bottom: none;
+    transition: background 0.15s ease;
+    font-size: 0.8rem;
+}
+
+.contactRow:first-child { border-radius: 8px 8px 0 0; }
+.contactRow:last-child { border-bottom: 1px solid rgba(0,0,0,0.03); border-radius: 0 0 8px 8px; }
+.contactRow:only-child { border-radius: 8px; border-bottom: 1px solid rgba(0,0,0,0.03); }
+
+.contactRow:hover { background: rgba(168,145,116,0.02); }
+
+.unread {
+    border-left: 3px solid var(--chrome, #A89174) !important;
+    background: rgba(168,145,116,0.03);
+}
+
+.selected { background: rgba(168,145,116,0.06) !important; }
+
+/* Cells */
+.tdCheck input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: var(--chrome, #A89174);
+    cursor: pointer;
+}
+
+.tdName {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.contactName {
+    font-weight: 600;
+    color: #1B1B3A;
+    font-size: 0.82rem;
+}
+
+.newBadge {
+    font-size: 0.55rem;
+    font-weight: 700;
+    color: white;
+    background: var(--chrome, #A89174);
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.tdContact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.tdContact span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+    color: rgba(27,27,58,0.45);
+}
+
+.subjectTag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: rgba(168,145,116,0.08);
+    color: var(--chrome, #A89174);
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.tdMessage { overflow: hidden; }
+
+.msgPreview {
+    font-size: 0.78rem;
+    color: rgba(27,27,58,0.55);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tdDate {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.72rem;
+    color: rgba(27,27,58,0.4);
+}
+
+.timeSmall {
+    font-size: 0.62rem;
+    color: rgba(27,27,58,0.25);
+}
+
+.tdActions {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.actionBtn {
+    padding: 0.35rem;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 4px;
+    color: rgba(27,27,58,0.35);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.actionBtn:hover {
+    color: var(--chrome, #A89174);
+    border-color: var(--chrome, #A89174);
+}
+
+.deleteBtn:hover {
+    color: #E91E63 !important;
+    border-color: #E91E63 !important;
+}
+
+/* Empty State */
+.emptyBox {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.emptyIcon {
+    font-size: 2.5rem;
+    color: rgba(27,27,58,0.08);
+    margin-bottom: 0.75rem;
+}
+
+.emptyBox p {
+    color: rgba(27,27,58,0.3);
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+/* ===========================================
+   TOAST NOTIFICATIONS
+   =========================================== */
+.toast {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    z-index: 9999;
+    animation: toastSlideIn 0.35s ease;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+@keyframes toastSlideIn {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.toastSuccess {
+    background: #0E1330;
+    color: white;
+    border-left: 3px solid #2A9D8F;
+}
+
+.toastError {
+    background: #0E1330;
+    color: white;
+    border-left: 3px solid #E91E63;
+}
+
+.toastSuccess svg:first-child { color: #2A9D8F; }
+.toastError svg:first-child { color: #E91E63; }
+
+.toastClose {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.4);
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+}
+
+.toastClose:hover { color: white; }
+
+/* ===========================================
+   CONFIRM DIALOG
+   =========================================== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 15, 5,0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9998;
+    animation: overlayFade 0.2s ease;
+}
+
+@keyframes overlayFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.confirmDialog {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    animation: dialogScale 0.25s ease;
+}
+
+@keyframes dialogScale {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.confirmIcon {
+    font-size: 2.5rem;
+    color: #E91E63;
+    margin-bottom: 1rem;
+}
+
+.confirmDialog h3 {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.5rem;
+    color: #1B1B3A;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.confirmDialog p {
+    font-size: 0.85rem;
+    color: rgba(27,27,58,0.55);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.confirmCount {
+    display: block;
+    font-size: 0.72rem;
+    color: #E91E63;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.confirmActions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.confirmCancel {
+    padding: 0.7rem 1.5rem;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(27,27,58,0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.confirmCancel:hover { border-color: rgba(27,27,58,0.3); color: #1B1B3A; }
+
+.confirmDelete {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.7rem 1.5rem;
+    background: #E91E63;
+    color: white;
+    border: none;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.confirmDelete:hover { opacity: 0.85; }
+
+/* ===========================================
+   PAGINATION
+   =========================================== */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    margin-top: 1.5rem;
+    padding: 1rem 0;
+}
+
+.pageBtn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(27,27,58,0.5);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pageBtn:hover { border-color: var(--chrome, #A89174); color: var(--chrome, #A89174); }
+.pageBtn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.pageActive {
+    background: #0E1330 !important;
+    color: white !important;
+    border-color: #0E1330 !important;
+}
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+@media (max-width: 1024px) {
+    .tableHeader { display: none; }
+    .contactRow {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1rem;
+        border-radius: 8px !important;
+        margin-bottom: 0.5rem;
+        border: 1px solid rgba(0,0,0,0.04) !important;
+    }
+    .tdCheck { position: absolute; top: 1rem; right: 1rem; }
+    .contactRow { position: relative; }
+    .tdActions { margin-top: 0.5rem; }
+}
+
+@media (max-width: 768px) {
+    .admin { flex-direction: column; }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+    }
+    .sidebarBrand { padding: 1rem; }
+    .sidebarNav { flex-direction: row; padding: 0.5rem; }
+    .sidebarStats { display: none; }
+    .logoutBtn { border-top: none; border-left: 1px solid rgba(255,255,255,0.06); padding: 0.5rem 1rem; }
+    .main { padding: 1rem; }
+    .topBar h1 { font-size: 1.3rem; }
+    .filterBar { flex-direction: column; }
+    .searchWrap { min-width: auto; }
+}

@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='144' height='144' viewBox='0 0 144 144' role='img' aria-labelledby='title desc'>
+  <title>P1 illustration</title>
+  <desc>Decorative illustration card for personal branding section.</desc>
+  <defs>
+    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#f77a63'/>
+      <stop offset='100%' stop-color='#f39c12'/>
+    </linearGradient>
+  </defs>
+  <rect x='8' y='8' width='128' height='128' rx='24' fill='url(#g)'/>
+  <rect x='20' y='22' width='104' height='72' rx='16' fill='#fbe4df' opacity='0.9'/>
+  <circle cx='42' cy='54' r='10' fill='white' opacity='0.95'/>
+  <rect x='58' y='46' width='52' height='6' rx='3' fill='white' opacity='0.96'/>
+  <rect x='58' y='59' width='40' height='6' rx='3' fill='white' opacity='0.82'/>
+  <circle cx='72' cy='108' r='20' fill='white' opacity='0.93'/>
+  <text x='72' y='114' font-size='22' text-anchor='middle' fill='#f77a63' font-family='Arial, Helvetica, sans-serif' font-weight='700'>!</text>
+  <text x='22' y='126' font-size='11' fill='white' font-family='Arial, Helvetica, sans-serif' letter-spacing='1'>P1</text>
+</svg>

@@ -1,0 +1,60 @@
+.scrollToTopBtn {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: linear-gradient(135deg, var(--chrome), var(--chrome-light));
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    box-shadow: 0 8px 24px rgba(240, 106, 36, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 99;
+}
+
+.scrollToTopBtn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: inherit;
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+}
+
+.scrollToTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scrollToTopBtn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(240, 106, 36, 0.35);
+}
+
+.scrollToTopBtn:hover::before {
+    filter: blur(12px);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .scrollToTopBtn {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,337 @@
+.banner {
+    position: relative;
+    padding: 10rem 0 4rem;
+    background: linear-gradient(135deg, var(--navy) 0%, #0f2549 100%);
+    text-align: center;
+}
+
+.bannerLabel {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #ffffff;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.bannerTitle {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.bannerSub {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.blogSection {
+    background: var(--white);
+}
+
+.blogGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.blogCard {
+    background: var(--ivory);
+    border-radius: 0;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all var(--transition-base);
+    border: 1px solid var(--pearl);
+}
+
+.blogCard:hover {
+    box-shadow: var(--shadow-card);
+}
+
+.blogThumb {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+}
+
+.blogThumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blogCard:hover .blogThumb img {
+    transform: scale(1.05);
+}
+
+.thumbPlaceholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, var(--pearl), #e8d5c4);
+}
+
+.blogCat {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 0.3rem 0.85rem;
+    background: var(--chrome);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 600;
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.blogBody {
+    padding: 1.5rem;
+}
+
+.blogDate {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.blogTitle {
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blogExcerpt {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blogReadMore {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--chrome);
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: gap var(--transition-fast);
+}
+
+.blogCard:hover .blogReadMore {
+    gap: 0.7rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+}
+
+.pageBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    background: var(--ivory);
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    border: 1px solid var(--pearl);
+}
+
+.pageBtn:hover {
+    border-color: var(--chrome);
+    color: var(--chrome);
+}
+
+.pageActive {
+    background: var(--chrome);
+    color: white;
+    border-color: var(--chrome);
+}
+
+.emptyState {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--ivory);
+    border-radius: 0;
+    border: 2px dashed var(--pearl);
+}
+
+.emptyState h3 {
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Blog Detail */
+.article {
+    background: var(--white);
+    padding: 2rem 0 4rem;
+}
+
+.articleContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.articleMeta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.articleCat {
+    padding: 0.3rem 0.85rem;
+    background: var(--chrome);
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 600;
+    border-radius: 0;
+}
+
+.articleDate {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.articleTitle {
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+.articleThumb {
+    width: 100%;
+    border-radius: 0;
+    margin-bottom: 2rem;
+}
+
+.articleContent {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--text-dark);
+}
+
+.articleContent h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+.articleContent h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+}
+
+.articleContent p {
+    margin-bottom: 1.25rem;
+}
+
+.articleContent ul,
+.articleContent ol {
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.articleContent li {
+    margin-bottom: 0.5rem;
+}
+
+.articleContent ul li {
+    list-style: disc;
+}
+
+.articleContent ol li {
+    list-style: decimal;
+}
+
+.articleContent blockquote {
+    border-left: 4px solid var(--chrome);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--ivory);
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+.articleTags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--pearl);
+}
+
+.articleTag {
+    padding: 0.3rem 0.8rem;
+    background: var(--ivory);
+    border-radius: 0;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--chrome);
+    font-weight: 600;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+.backLink:hover {
+    gap: 0.6rem;
+}
+
+@media (max-width: 1023px) {
+    .blogGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .banner {
+        padding: 8rem 0 3rem;
+    }
+
+    .bannerTitle {
+        font-size: 2rem;
+    }
+
+    .blogGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .articleTitle {
+        font-size: 1.75rem;
+    }
+}

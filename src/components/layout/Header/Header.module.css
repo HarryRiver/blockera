@@ -1,0 +1,422 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.5s var(--ease-out);
+    padding: 1.1rem 0;
+    background: transparent;
+}
+
+/* ===== Default state: over dark hero ===== */
+.header .navLink {
+    color: rgba(255, 255, 255, 0.8);
+}
+.header .navLink:hover,
+.header .navLink.active {
+    color: var(--white);
+}
+.header .ctaButton {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+.header .ctaButton:hover {
+    background: var(--white);
+    color: var(--navy);
+    border-color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+.header .mobileToggle span {
+    background: var(--white);
+}
+.header .logoImage {
+    filter: brightness(10);
+}
+
+/* ===== Scrolled state: solid light bg ===== */
+.header.scrolled {
+    background: rgba(248, 246, 252, 0.96);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    box-shadow: 0 1px 0 rgba(249, 171, 129, 0.15);
+    padding: 0.55rem 0;
+}
+.header.scrolled .logoImage {
+    filter: none;
+    height: 36px;
+}
+.header.scrolled .navLink {
+    color: var(--text-dark);
+}
+.header.scrolled .navLink:hover,
+.header.scrolled .navLink.active {
+    color: var(--chrome);
+}
+.header.scrolled .ctaButton {
+    color: var(--white);
+    border-color: var(--navy);
+    background: var(--navy);
+}
+.header.scrolled .ctaButton:hover {
+    background: var(--navy-light);
+    border-color: var(--navy-light);
+    box-shadow: var(--shadow-chrome);
+    transform: translateY(-2px);
+}
+.header.scrolled .mobileToggle span {
+    background: var(--text-dark);
+}
+
+.headerInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1002;
+}
+
+.logoImage {
+    height: 42px;
+    width: auto;
+    transition: all 0.5s var(--ease-out);
+}
+
+/* ===== Navigation ===== */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.navItem {
+    position: relative;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.5rem 0.45rem;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    white-space: nowrap;
+    position: relative;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 1.5px;
+    background: currentColor;
+    transition: all 0.4s var(--ease-out);
+    transform: translateX(-50%);
+    opacity: 0.5;
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+    width: 50%;
+}
+
+.chevron {
+    font-size: 0.55rem;
+    transition: transform 0.3s ease;
+    opacity: 0.5;
+}
+
+.navItem:hover .chevron {
+    transform: rotate(180deg);
+}
+
+/* ===== Dropdown ===== */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    opacity: 0;
+    visibility: hidden;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(36, 16, 12, 0.12);
+    padding: 0.5rem;
+    min-width: 240px;
+    transition: all 0.3s var(--ease-out);
+    border: 1px solid rgba(249, 171, 129, 0.1);
+}
+
+.navItem:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.dropdownItem {
+    display: block;
+    padding: 0.7rem 1.15rem;
+    font-size: 0.8rem;
+    color: var(--text-body);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.dropdownItem:hover {
+    background: var(--pearl);
+    color: var(--text-dark);
+    padding-left: 1.4rem;
+}
+
+/* ===== CTA Button ===== */
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.55rem 1.4rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 0;
+    border: 1px solid;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    text-decoration: none;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    white-space: nowrap;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.ctaButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.ctaButton:hover::before {
+    left: 100%;
+}
+
+/* ===== Mobile Toggle ===== */
+.mobileToggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    position: relative;
+}
+
+.mobileToggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    transition: all 0.4s var(--ease-out);
+    border-radius: 2px;
+}
+
+/* When menu is open, X icon is ALWAYS dark navy (visible on white bg) */
+.mobileToggle.open span {
+    background: var(--navy) !important;
+}
+
+.mobileToggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(4.5px, 4.5px);
+}
+
+.mobileToggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.mobileToggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(4.5px, -4.5px);
+}
+
+/* ===== Mobile Overlay ===== */
+.mobileOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 15, 5, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.4s var(--ease-out);
+    pointer-events: none;
+}
+
+.mobileOverlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== Mobile Menu Panel ===== */
+.mobileMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 360px;
+    max-width: 88vw;
+    background: var(--white);
+    z-index: 1001;
+    padding: 5.5rem 2rem 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: translateX(100%);
+    transition: transform 0.5s var(--ease-out);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.15);
+}
+
+.mobileMenu.open {
+    transform: translateX(0);
+}
+
+.mobileClose {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid rgba(249, 171, 129, 0.15);
+    border-radius: 50%;
+    font-size: 1rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.mobileClose:hover {
+    background: var(--pearl);
+    border-color: rgba(249, 171, 129, 0.3);
+}
+
+.mobileNavList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.mobileNavLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(249, 171, 129, 0.12);
+    width: 100%;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+    color: var(--chrome);
+    padding-left: 0.75rem;
+}
+
+.mobileDropdown {
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+    gap: 0;
+    overflow: hidden;
+    animation: slideDown 0.35s var(--ease-out);
+}
+
+.mobileDropdown.show {
+    display: flex;
+}
+
+.mobileDropdownItem {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.mobileDropdownItem:hover {
+    color: var(--chrome);
+}
+
+.mobileCta {
+    margin-top: 2.5rem;
+    width: 100%;
+    justify-content: center;
+    color: var(--white) !important;
+    border-color: var(--navy) !important;
+    background: var(--navy) !important;
+    padding: 0.85rem 1.5rem;
+}
+
+.mobileCta:hover {
+    background: var(--navy-light) !important;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1023px) {
+    .nav { display: none; }
+    .ctaButton.desktop { display: none; }
+    .mobileToggle { display: flex; }
+    .mobileMenu { display: block; }
+    .mobileOverlay { display: block; }
+    .headerInner { padding: 0 1.25rem; }
+}
+
+@media (max-width: 767px) {
+    .logoImage { height: 34px; }
+    .header.scrolled .logoImage { height: 30px; }
+    .mobileMenu { width: 100vw; max-width: 100vw; border-left: none; box-shadow: none; }
+}
