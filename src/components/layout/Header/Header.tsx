@@ -13,21 +13,13 @@ export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
-
-    useEffect(() => { setMounted(true); }, []);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    useEffect(() => {
-        setMobileOpen(false);
-        setOpenDropdown(null);
-    }, [pathname]);
 
     useEffect(() => {
         document.body.style.overflow = mobileOpen ? 'hidden' : '';
@@ -39,17 +31,22 @@ export default function Header() {
         return pathname.startsWith(href);
     };
 
+    const closeMobileMenu = () => {
+        setMobileOpen(false);
+        setOpenDropdown(null);
+    };
+
     /* Mobile menu rendered via portal to avoid header overflow clipping */
-    const mobileMenuContent = mounted ? createPortal(
+    const mobileMenuContent = typeof document !== 'undefined' ? createPortal(
         <>
             <div
                 className={`${styles.mobileOverlay} ${mobileOpen ? styles.show : ''}`}
-                onClick={() => setMobileOpen(false)}
+                onClick={closeMobileMenu}
             />
             <div className={`${styles.mobileMenu} ${mobileOpen ? styles.open : ''}`}>
                 <button
                     className={styles.mobileClose}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={closeMobileMenu}
                     aria-label="Đóng menu"
                 >
                     ✕
@@ -71,21 +68,21 @@ export default function Header() {
                                     </button>
                                     <div className={`${styles.mobileDropdown} ${openDropdown === item.href ? styles.show : ''}`}>
                                         {item.children.map((child) => (
-                                            <Link key={child.href} href={child.href} className={styles.mobileDropdownItem}>
+                                            <Link key={child.href} href={child.href} className={styles.mobileDropdownItem} onClick={closeMobileMenu}>
                                                 {child.label}
                                             </Link>
                                         ))}
                                     </div>
                                 </>
                             ) : (
-                                <Link href={item.href} className={`${styles.mobileNavLink} ${isActive(item.href) ? styles.active : ''}`}>
+                                <Link href={item.href} className={`${styles.mobileNavLink} ${isActive(item.href) ? styles.active : ''}`} onClick={closeMobileMenu}>
                                     {item.label}
                                 </Link>
                             )}
                         </div>
                     ))}
                 </div>
-                <Link href="/lien-he" className={`${styles.ctaButton} ${styles.mobileCta}`}>
+                <Link href="/lien-he" className={`${styles.ctaButton} ${styles.mobileCta}`} onClick={closeMobileMenu}>
                     <FiPhone />
                     Đăng ký tư vấn
                 </Link>
