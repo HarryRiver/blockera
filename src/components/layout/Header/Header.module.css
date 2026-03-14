@@ -88,7 +88,7 @@
 .logoImage {
     height: 42px;
     width: auto;
-    transition: all 0.5s var(--ease-out);
+    transition: height 0.5s var(--ease-out);
 }
 
 /* ===== Navigation ===== */

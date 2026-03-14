@@ -10,7 +10,17 @@ export default function Footer() {
             <div className={styles.hexDecor} />
             <div className={styles.footerGrid}>
                 <div className={styles.footerBrand}>
-                    <Image src="/images/logo-horizontal-black.png" alt="BLOCKERA" width={180} height={55} className={styles.footerLogo} />
+                    {/* Highligted News above Logo */}
+                    <div className={styles.footerTopNews}>
+                        <h5 className={styles.topNewsTitle}>Tin nổi bật</h5>
+                        <ul className={styles.topNewsList}>
+                            <li>
+                                <a href="https://giaoducthoidai.vn/xay-dung-van-hoa-cong-so-trong-ky-nguyen-moi-post743783.html" target="_blank" rel="noopener noreferrer">Xây dựng văn hóa công sở trong kỷ nguyên mới</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <Image src="/images/logo-horizontal-orange.png" alt="BLOCKERA" width={180} height={55} className={styles.footerLogo} />
                     <p className={styles.footerSlogan}>&ldquo;Beyond the chain&rdquo;</p>
                     <p className={styles.footerTagline}>
                         Thương hiệu cá nhân là điểm chạm đầu tiên tạo nên uy tín bền vững

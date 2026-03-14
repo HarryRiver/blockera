@@ -30,8 +30,11 @@ export default function CoreValues() {
                 <div className={`${styles.valuesGrid} ${isRevealed ? styles.revealed : ''}`}>
                     {coreValues.map((val, i) => (
                         <div key={val.title} className={styles.valueCard} style={{ transitionDelay: `${i * 0.08}s` }}>
-                            <div className={styles.valueHex}>
-                                {iconMap[val.icon]}
+                            <div className={styles.valueIconWrap}>
+                                <div className={styles.valueIconBg}></div>
+                                <div className={styles.valueIconInner}>
+                                    {iconMap[val.icon]}
+                                </div>
                             </div>
                             <h4 className={styles.valueTitle}>{val.title}</h4>
                             <p className={styles.valueDesc}>{val.description}</p>

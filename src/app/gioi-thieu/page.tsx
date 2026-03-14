@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import styles from './about.module.css';
-import { FiEye, FiTarget, FiCheckSquare, FiRepeat, FiStar, FiHeart, FiFeather, FiLayers, FiShield, FiSun, FiAward, FiUsers, FiBook, FiGlobe, FiCompass } from 'react-icons/fi';
+import { FiEye, FiTarget, FiCheckSquare, FiRefreshCw, FiStar, FiHeart, FiFeather, FiBox, FiShield, FiSun, FiAward, FiUsers, FiBook, FiGlobe, FiCompass } from 'react-icons/fi';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 
@@ -19,11 +20,11 @@ export const metadata: Metadata = {
 
 const values = [
     { title: 'CHUẨN MỰC', desc: 'Mọi sự chuyên nghiệp bắt đầu từ chuẩn mực rõ ràng', icon: <FiCheckSquare /> },
-    { title: 'NHẤT QUÁN', desc: 'Uy tín được xây bằng sự lặp lại đáng tin', icon: <FiRepeat /> },
+    { title: 'NHẤT QUÁN', desc: 'Uy tín được xây bằng sự lặp lại đáng tin', icon: <FiRefreshCw /> },
     { title: 'HIỆN DIỆN', desc: 'Phong thái, khí chất là cách năng lực được cảm nhận', icon: <FiStar /> },
     { title: 'NGHI THỨC', desc: 'Nghi thức là ngôn ngữ của sự tôn trọng và vị thế', icon: <FiHeart /> },
     { title: 'TINH TẾ', desc: 'Giao tiếp đẳng cấp nằm ở sự điều chỉnh', icon: <FiFeather /> },
-    { title: 'KIẾN TRÚC', desc: 'Thương hiệu cá nhân không được tạo, mà được thiết kế', icon: <FiLayers /> },
+    { title: 'KIẾN TRÚC', desc: 'Thương hiệu cá nhân không được tạo, mà được thiết kế', icon: <FiBox /> },
     { title: 'BỀN VỮNG', desc: 'Sự chuyên nghiệp thật sự trở thành thói quen, không phải nỗ lực', icon: <FiShield /> },
     { title: 'TRUYỀN CẢM HỨNG', desc: 'Lan tỏa giá trị tích cực qua phong thái và hành động mỗi ngày', icon: <FiSun /> },
 ];
@@ -182,7 +183,8 @@ export default function AboutPage() {
                 <div className="container">
                     <ScrollReveal>
                         <span className="section-label">Nền tảng</span>
-                        <h2 className="section-title center">8 giá trị cốt lõi</h2>
+                        <h2 className="section-title center" style={{ marginBottom: '1rem' }}>Giá trị cốt lõi</h2>
+                        <p className="section-subtitle center">8 giá trị cốt lõi định hướng mọi hoạt động đào tạo và tư vấn</p>
                     </ScrollReveal>
                     <div className={styles.valGrid}>
                         {values.map((v, i) => (
@@ -237,7 +239,7 @@ export default function AboutPage() {
                             },
                         ].map((project, index) => (
                             <ScrollReveal key={index} delay={index * 120} direction="up">
-                                <div className={styles.projectCard} style={{ '--accent': project.accent } as React.CSSProperties}>
+                                <Link href="/thu-vien" className={styles.projectCard} style={{ '--accent': project.accent } as React.CSSProperties}>
                                     <div className={styles.projectImageFrame}>
                                         {/* Bạn có thể thay div này bằng <Image src="..." alt="..." fill /> */}
                                         <div className={styles.projectImagePlaceholder}>
@@ -254,7 +256,7 @@ export default function AboutPage() {
                                         <p className={styles.projectRole}>{project.role}</p>
                                         <h3 className={styles.projectTitle}>{project.title}</h3>
                                     </div>
-                                </div>
+                                </Link>
                             </ScrollReveal>
                         ))}
                     </div>

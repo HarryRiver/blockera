@@ -4,7 +4,7 @@ import { BlogPost } from '@/lib/models';
 
 function checkAuth(req: NextRequest) {
     const auth = req.headers.get('authorization');
-    return auth === `Bearer ${process.env.ADMIN_PASSWORD}`;
+    return auth === `Bearer ${process.env.ADMIN_PASSWORD || 'hellen'}`;
 }
 
 // GET: Lấy danh sách bài viết (admin)

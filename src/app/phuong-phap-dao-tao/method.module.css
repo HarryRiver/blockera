@@ -1,315 +1,380 @@
 /* METHOD PAGE STYLES */
 .banner {
-    position: relative;
-    padding: 8rem 0 4rem;
-    text-align: center;
-    background:
-        linear-gradient(
-            180deg,
-            #8a3f17 0%,
-            #b65623 16%,
-            #ee8a49 34%,
-            #ffd7bd 62%,
-            #fff3ea 100%
-        );
-    border-bottom: 1px solid rgba(240, 106, 36, 0.1);
+	position: relative;
+	padding: 10rem 0 4rem;
+	background:
+		linear-gradient(135deg, rgba(14, 19, 48, 0.5), rgba(15, 37, 73, 0.45)),
+		url("/images/bg/banner-bg.png") center / cover no-repeat;
+	text-align: center;
 }
 
-.bannerOverlay {
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse at 14% 8%, rgba(255, 186, 142, 0.32) 0%, transparent 40%),
-        radial-gradient(ellipse at 82% 14%, rgba(110, 43, 10, 0.18) 0%, transparent 42%),
-        radial-gradient(ellipse at 50% 45%, rgba(255, 255, 255, 0.16) 0%, transparent 55%);
-    pointer-events: none;
+.bannerLabel {
+	font-family: "Be Vietnam Pro", sans-serif;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 4px;
+	color: #ffffff;
+	margin-bottom: 1rem;
+	display: inline-block;
 }
 
 .bannerTitle {
-    font-size: 3rem;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    color: var(--navy);
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 2;
+	color: white;
+	font-size: 3rem;
+	margin-bottom: 0.5rem;
 }
 
 .bannerSub {
-    font-size: 1.1rem;
-    color: var(--text-body);
-    font-weight: 300;
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 1.1rem;
 }
 
 .processSection {
-    padding: 5rem 0;
-    background: var(--ivory);
+	padding: 5rem 0;
+	background: var(--ivory);
 }
 
 .sectionTitle {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 4rem;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    position: relative;
+	text-align: center;
+	font-size: 2.2rem;
+	font-weight: 600;
+	color: var(--text-dark);
+	margin-bottom: 4rem;
+	font-family: "Be Vietnam Pro", sans-serif;
+	position: relative;
 }
 
 .sectionTitle::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--chrome);
-    margin: 1rem auto 0;
-    border-radius: 2px;
+	content: "";
+	display: block;
+	width: 60px;
+	height: 3px;
+	background: var(--chrome);
+	margin: 1rem auto 0;
+	border-radius: 2px;
 }
 
 .processGrid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 2rem 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: stretch;
+	gap: 1.5rem;
+	padding: 2rem 0;
 }
 
 .processCardWrapper {
-    position: relative;
-    flex: 1;
-    min-width: 200px;
-    max-width: 240px;
-    display: flex;
+	position: relative;
+	flex: 1;
+	min-width: 200px;
+	max-width: 240px;
+	display: flex;
 }
 
 /* Connecting arrows between cards for desktop */
 .processCardWrapper:not(:last-child)::after {
-    content: '→';
-    position: absolute;
-    right: -1.2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.5rem;
-    color: var(--chrome-light);
-    z-index: 10;
+	content: "→";
+	position: absolute;
+	right: -1.2rem;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.5rem;
+	color: var(--chrome-light);
+	z-index: 10;
 }
 
 .processCard {
-    background: var(--white);
-    border-radius: 12px;
-    width: 100%;
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    position: relative;
-    border-top: 5px solid var(--chrome);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	background: var(--white);
+	border-radius: 12px;
+	width: 100%;
+	height: 100%;
+	padding: 2.5rem 1.5rem;
+	text-align: center;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+	position: relative;
+	border-top: 5px solid var(--chrome);
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .processCard:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+	transform: translateY(-10px);
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* Color variations from image */
-.processCard:nth-child(1) { border-top-color: #9bd643; } /* Lục nhạt */
-.processCard:nth-child(2) { border-top-color: #27c18a; } /* Lục đậm */
-.processCard:nth-child(3) { border-top-color: #0d8bd6; } /* Xanh dương */
-.processCard:nth-child(4) { border-top-color: #0b78d1; } /* Xanh thẫm */
-.processCard:nth-child(5) { border-top-color: #6d4be0; } /* Tím */
+.processCard:nth-child(1) {
+	border-top-color: #9bd643;
+} /* Lục nhạt */
+.processCard:nth-child(2) {
+	border-top-color: #27c18a;
+} /* Lục đậm */
+.processCard:nth-child(3) {
+	border-top-color: #0d8bd6;
+} /* Xanh dương */
+.processCard:nth-child(4) {
+	border-top-color: #0b78d1;
+} /* Xanh thẫm */
+.processCard:nth-child(5) {
+	border-top-color: #6d4be0;
+} /* Tím */
 
 .processNum {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    width: 36px;
-    height: 36px;
-    background: var(--chrome);
-    color: white;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	width: 36px;
+	height: 36px;
+	background: var(--chrome);
+	color: white;
+	font-family: "Be Vietnam Pro", sans-serif;
+	font-size: 1.1rem;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.processCardWrapper:nth-child(1) .processNum { background: #9bd643; }
-.processCardWrapper:nth-child(2) .processNum { background: #27c18a; }
-.processCardWrapper:nth-child(3) .processNum { background: #0d8bd6; }
-.processCardWrapper:nth-child(4) .processNum { background: #0b78d1; }
-.processCardWrapper:nth-child(5) .processNum { background: #6d4be0; }
+.processCardWrapper:nth-child(1) .processNum {
+	background: #9bd643;
+}
+.processCardWrapper:nth-child(2) .processNum {
+	background: #27c18a;
+}
+.processCardWrapper:nth-child(3) .processNum {
+	background: #0d8bd6;
+}
+.processCardWrapper:nth-child(4) .processNum {
+	background: #0b78d1;
+}
+.processCardWrapper:nth-child(5) .processNum {
+	background: #6d4be0;
+}
 
 .processIcon {
-    font-size: 2.5rem;
-    color: var(--text-dark);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	font-size: 2.5rem;
+	color: var(--text-dark);
+	margin-bottom: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .processText {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    line-height: 1.4;
-    font-family: 'Be Vietnam Pro', sans-serif;
+	font-size: 1.05rem;
+	font-weight: 600;
+	color: var(--text-dark);
+	line-height: 1.4;
+	font-family: "Be Vietnam Pro", sans-serif;
 }
 
 /* Why Choose Section */
 .whySection {
-    padding: 6rem 0;
-    background: radial-gradient(circle at right center, rgba(240, 106, 36, 0.03) 0%, rgba(249, 171, 129, 0) 50%), var(--pearl);
+	padding: 6rem 0;
+	background:
+		radial-gradient(
+			circle at right center,
+			rgba(240, 106, 36, 0.03) 0%,
+			rgba(249, 171, 129, 0) 50%
+		),
+		var(--pearl);
 }
 
 .timeline {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    padding: 2rem 0;
+	max-width: 800px;
+	margin: 0 auto;
+	position: relative;
+	padding: 2rem 0;
 }
 
 /* The vertical line axis */
 .timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 20px;
-    width: 3px;
-    background: #d0c8c4;
-    border-radius: 4px;
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 20px;
+	width: 3px;
+	background: #d0c8c4;
+	border-radius: 4px;
 }
 
 .timelineItem {
-    position: relative;
-    padding-left: 70px;
-    margin-bottom: 1.8rem;
-    display: flex;
-    align-items: center;
-    min-height: 50px;
+	position: relative;
+	padding-left: 70px;
+	margin-bottom: 1.8rem;
+	display: flex;
+	align-items: center;
+	min-height: 50px;
 }
 
 .timelineItem:last-child {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 /* The dots on axis */
 .timelineDot {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 19px;
-    height: 19px;
-    border-radius: 50%;
-    background: var(--chrome);
-    z-index: 2;
-    box-shadow: 0 0 0 4px var(--pearl);
+	position: absolute;
+	left: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 19px;
+	height: 19px;
+	border-radius: 50%;
+	background: var(--chrome);
+	z-index: 2;
+	box-shadow: 0 0 0 4px var(--pearl);
 }
 
 /* Connecting dashed line in timeline */
 .timelineItem::before {
-    content: '';
-    position: absolute;
-    left: 31px;
-    top: 50%;
-    width: 31px;
-    border-top: 2px dashed rgba(240, 106, 36, 0.5);
-    z-index: 0;
+	content: "";
+	position: absolute;
+	left: 31px;
+	top: 50%;
+	width: 31px;
+	border-top: 2px dashed rgba(240, 106, 36, 0.5);
+	z-index: 0;
 }
 
 .arrowRight {
-    position: absolute;
-    left: 48px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: rgba(240, 106, 36, 0.6);
-    font-size: 1.2rem;
-    z-index: 1;
+	position: absolute;
+	left: 48px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: rgba(240, 106, 36, 0.6);
+	font-size: 1.2rem;
+	z-index: 1;
 }
 
 .timelineContent {
-    background: var(--white);
-    padding: 1rem 1.8rem;
-    border-radius: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    font-weight: 300;
-    line-height: 1.6;
-    width: 100%;
-    transition: box-shadow 0.3s ease;
+	background: var(--white);
+	padding: 1rem 1.8rem;
+	border-radius: 30px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+	font-size: 0.95rem;
+	color: var(--text-dark);
+	font-weight: 300;
+	line-height: 1.6;
+	width: 100%;
+	transition: box-shadow 0.3s ease;
 }
 
 .timelineContent:hover {
-    box-shadow: 0 5px 25px rgba(240, 106, 36, 0.08);
+	box-shadow: 0 5px 25px rgba(240, 106, 36, 0.08);
 }
 
 /* Multi-colored timeline dots */
-.timelineItem:nth-child(1) .timelineDot { background: #e09d43; } /* Orange */
-.timelineItem:nth-child(2) .timelineDot { background: #e05e5e; } /* Red/Pink */
-.timelineItem:nth-child(3) .timelineDot { background: #40b3ad; } /* Teal */
-.timelineItem:nth-child(4) .timelineDot { background: #8ebc58; } /* Green */
-.timelineItem:nth-child(5) .timelineDot { background: #e09d43; } /* Orange */
-.timelineItem:nth-child(6) .timelineDot { background: #e05e5e; } /* Red/Pink */
+.timelineItem:nth-child(1) .timelineDot {
+	background: #e09d43;
+} /* Orange */
+.timelineItem:nth-child(2) .timelineDot {
+	background: #e05e5e;
+} /* Red/Pink */
+.timelineItem:nth-child(3) .timelineDot {
+	background: #40b3ad;
+} /* Teal */
+.timelineItem:nth-child(4) .timelineDot {
+	background: #8ebc58;
+} /* Green */
+.timelineItem:nth-child(5) .timelineDot {
+	background: #e09d43;
+} /* Orange */
+.timelineItem:nth-child(6) .timelineDot {
+	background: #e05e5e;
+} /* Red/Pink */
 
-.timelineItem:nth-child(1)::before { border-color: #e09d43; } 
-.timelineItem:nth-child(2)::before { border-color: #e05e5e; } 
-.timelineItem:nth-child(3)::before { border-color: #40b3ad; } 
-.timelineItem:nth-child(4)::before { border-color: #8ebc58; } 
-.timelineItem:nth-child(5)::before { border-color: #e09d43; } 
-.timelineItem:nth-child(6)::before { border-color: #e05e5e; } 
+.timelineItem:nth-child(1)::before {
+	border-color: #e09d43;
+}
+.timelineItem:nth-child(2)::before {
+	border-color: #e05e5e;
+}
+.timelineItem:nth-child(3)::before {
+	border-color: #40b3ad;
+}
+.timelineItem:nth-child(4)::before {
+	border-color: #8ebc58;
+}
+.timelineItem:nth-child(5)::before {
+	border-color: #e09d43;
+}
+.timelineItem:nth-child(6)::before {
+	border-color: #e05e5e;
+}
 
-.timelineItem:nth-child(1) .arrowRight { color: #e09d43; } 
-.timelineItem:nth-child(2) .arrowRight { color: #e05e5e; } 
-.timelineItem:nth-child(3) .arrowRight { color: #40b3ad; } 
-.timelineItem:nth-child(4) .arrowRight { color: #8ebc58; } 
-.timelineItem:nth-child(5) .arrowRight { color: #e09d43; } 
-.timelineItem:nth-child(6) .arrowRight { color: #e05e5e; } 
+.timelineItem:nth-child(1) .arrowRight {
+	color: #e09d43;
+}
+.timelineItem:nth-child(2) .arrowRight {
+	color: #e05e5e;
+}
+.timelineItem:nth-child(3) .arrowRight {
+	color: #40b3ad;
+}
+.timelineItem:nth-child(4) .arrowRight {
+	color: #8ebc58;
+}
+.timelineItem:nth-child(5) .arrowRight {
+	color: #e09d43;
+}
+.timelineItem:nth-child(6) .arrowRight {
+	color: #e05e5e;
+}
 
 /* Responsive */
 @media (max-width: 1024px) {
-    .processGrid {
-        gap: 1.5rem;
-    }
-    .processCardWrapper:not(:last-child)::after {
-        display: none;
-    }
-    .processCardWrapper {
-        min-width: calc(33.333% - 1.5rem);
-    }
+	.processGrid {
+		gap: 1.5rem;
+	}
+	.processCardWrapper:not(:last-child)::after {
+		display: none;
+	}
+	.processCardWrapper {
+		min-width: calc(33.333% - 1.5rem);
+	}
 }
 
 @media (max-width: 768px) {
-    .bannerTitle { font-size: 2.2rem; }
-    .processCardWrapper {
-        min-width: calc(50% - 1.5rem);
-        max-width: none;
-    }
-    
-    .timeline::before { left: 16px; }
-    .timelineDot { left: 8px; }
-    .timelineItem { padding-left: 50px; }
-    .timelineContent { padding: 1rem 1.5rem; font-size: 0.9rem; border-radius: 20px; }
-    .timelineItem::before { left: 25px; width: 25px; }
-    .arrowRight { left: 40px; }
+	.bannerTitle {
+		font-size: 2.2rem;
+	}
+	.processCardWrapper {
+		min-width: calc(50% - 1.5rem);
+		max-width: none;
+	}
+
+	.timeline::before {
+		left: 16px;
+	}
+	.timelineDot {
+		left: 8px;
+	}
+	.timelineItem {
+		padding-left: 50px;
+	}
+	.timelineContent {
+		padding: 1rem 1.5rem;
+		font-size: 0.9rem;
+		border-radius: 20px;
+	}
+	.timelineItem::before {
+		left: 25px;
+		width: 25px;
+	}
+	.arrowRight {
+		left: 40px;
+	}
 }
 
 @media (max-width: 480px) {
-    .processCardWrapper {
-        min-width: 100%;
-    }
+	.processCardWrapper {
+		min-width: 100%;
+	}
 }

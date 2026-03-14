@@ -27,6 +27,46 @@
     padding: 0 2rem;
 }
 
+/* Top News Block */
+.footerTopNews {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.topNewsTitle {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--chrome-pale);
+    margin-bottom: 0.75rem;
+}
+
+.topNewsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.topNewsList li a {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 300;
+    line-height: 1.5;
+    display: inline-block;
+}
+
+.topNewsList li a:hover {
+    color: var(--chrome);
+}
+
 .footerLogo {
     height: 48px;
     width: auto;

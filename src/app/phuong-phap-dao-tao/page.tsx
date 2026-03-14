@@ -42,14 +42,10 @@ export default function MethodPage() {
             ]} />
             
             <section className={styles.banner}>
-                <div className={styles.bannerOverlay} />
-                <div className="container">
-                    <ScrollReveal>
-                        <h1 className={styles.bannerTitle}>Phương pháp đào tạo</h1>
-                    </ScrollReveal>
-                    <ScrollReveal delay={200}>
-                        <p className={styles.bannerSub}>Hướng đến sự chuẩn mực, chuyên nghiệp và áp dụng thực tiễn</p>
-                    </ScrollReveal>
+                <div className={`container ${styles.bannerContent}`}>
+                    <span className={styles.bannerLabel}>PHƯƠNG PHÁP CỦA CHÚNG TÔI</span>
+                    <h1 className={styles.bannerTitle}>PHƯƠNG PHÁP ĐÀO TẠO</h1>
+                    <p className={styles.bannerSub}>Hướng đến sự chuẩn mực, chuyên nghiệp và áp dụng thực tiễn</p>
                 </div>
             </section>
 

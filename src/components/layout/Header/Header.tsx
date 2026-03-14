@@ -13,7 +13,12 @@ export default function Header() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -37,7 +42,7 @@ export default function Header() {
     };
 
     /* Mobile menu rendered via portal to avoid header overflow clipping */
-    const mobileMenuContent = typeof document !== 'undefined' ? createPortal(
+    const mobileMenuContent = mounted && typeof document !== 'undefined' ? createPortal(
         <>
             <div
                 className={`${styles.mobileOverlay} ${mobileOpen ? styles.show : ''}`}

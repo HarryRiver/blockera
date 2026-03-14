@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FiMapPin, FiPhone, FiMail, FiFacebook, FiYoutube, FiSend, FiCheck } from 'react-icons/fi';
 import { BiMessageRoundedDots } from 'react-icons/bi';
+import { FaTiktok } from 'react-icons/fa';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import styles from './contact.module.css';
 
@@ -77,14 +78,20 @@ export default function ContactPage() {
                             <div className={styles.socialGroup}>
                                 <h3 className={styles.socialTitle}>Theo dõi chúng tôi</h3>
                                 <div className={styles.socialLinks}>
-                                    <a href="https://www.facebook.com/hellenthanhthuy.phongthaidoanhnhan" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                                    <a href="#" className={styles.socialLink} onClick={(e) => e.preventDefault()}>
                                         <FiFacebook /> Facebook
                                     </a>
-                                    <a href="https://youtube.com/@thuyanhchannels" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-                                        <FiYoutube /> YouTube
+                                    <a href="https://www.facebook.com/share/18CR7W6rAr/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                                        <FiFacebook /> Fanpage
                                     </a>
                                     <a href="https://zalo.me/0984191359" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
                                         <BiMessageRoundedDots /> Zalo
+                                    </a>
+                                    <a href="#" className={styles.socialLink} onClick={(e) => e.preventDefault()}>
+                                        <FaTiktok /> TikTok
+                                    </a>
+                                    <a href="https://youtube.com/@hellenthanhthuy?si=zvGijTHswswF3Y6x" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+                                        <FiYoutube /> YouTube
                                     </a>
                                 </div>
                             </div>

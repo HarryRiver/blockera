@@ -1,114 +1,244 @@
 .newsContainer {
-    padding: 10rem 0 6rem;
-    background: var(--ivory);
-    min-height: 100vh;
+	padding: 0 0 6rem;
+	background: var(--ivory);
+	min-height: 100vh;
+}
+
+.banner {
+	position: relative;
+	padding: 10rem 0 4rem;
+	background:
+		linear-gradient(135deg, rgba(14, 19, 48, 0.5), rgba(15, 37, 73, 0.45)),
+		url("/images/bg/banner-bg.png") center / cover no-repeat;
+	text-align: center;
+}
+
+.bannerLabel {
+	font-family: "Be Vietnam Pro", sans-serif;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 4px;
+	color: #ffffff;
+	margin-bottom: 1rem;
+	display: inline-block;
+}
+
+.bannerTitle {
+	color: white;
+	font-size: 3rem;
+	margin-bottom: 0.5rem;
+}
+
+.bannerSub {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 1.1rem;
+}
+
+.newsListContainer {
+	max-width: 1000px;
+	margin: 4rem auto 0;
+	padding: 0 2rem;
+}
+
+.newsCard {
+	display: flex;
+	flex-direction: row;
+	background: var(--white);
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+	margin-bottom: 2rem;
+	text-decoration: none;
+	color: inherit;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.newsCard:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.newsImageFrame {
+	width: 350px;
+	position: relative;
+	flex-shrink: 0;
+	background: #f4f4f4;
+}
+
+.newsThumb {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.newsInfo {
+	padding: 2.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.newsCat {
+	font-size: 0.8rem;
+	color: var(--chrome);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: 0.75rem;
+}
+
+.newsCardTitle {
+	font-size: 1.6rem;
+	font-family: "Be Vietnam Pro", sans-serif;
+	font-weight: 600;
+	color: var(--navy);
+	line-height: 1.4;
+	margin-bottom: 1rem;
+}
+
+.newsExcerpt {
+	font-size: 1rem;
+	color: var(--text-body);
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.newsDate {
+	font-size: 0.9rem;
+	color: var(--text-muted);
+	margin-top: auto;
 }
 
 .articleWrapper {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--white);
-    padding: 3rem 4rem;
-    border-radius: 16px;
-    box-shadow: var(--shadow-card);
+	max-width: 800px;
+	margin: 4rem auto 0;
+	background: var(--white);
+	padding: 3rem 4rem;
+	border-radius: 16px;
+	box-shadow: var(--shadow-card);
 }
 
 .breadcrumb {
-    font-size: 0.8rem;
-    color: var(--chrome);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+	font-size: 0.8rem;
+	color: var(--chrome);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .title {
-    font-size: 2.4rem;
-    color: var(--text-dark);
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-weight: 700;
+	font-size: 2.4rem;
+	color: var(--text-dark);
+	margin-bottom: 1rem;
+	line-height: 1.3;
+	font-family: "Be Vietnam Pro", sans-serif;
+	font-weight: 700;
 }
 
 .meta {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	margin-bottom: 2rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .subtitle {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 2rem;
-    line-height: 1.6;
+	font-size: 1.15rem;
+	font-weight: 600;
+	color: var(--text-dark);
+	margin-bottom: 2rem;
+	line-height: 1.6;
 }
 
 .content {
-    font-size: 1.05rem;
-    color: var(--text-body);
-    line-height: 1.8;
+	font-size: 1.05rem;
+	color: var(--text-body);
+	line-height: 1.8;
 }
 
 .content h3 {
-    font-size: 1.45rem;
-    color: var(--text-dark);
-    margin: 3rem 0 1.25rem;
-    font-weight: 700;
+	font-size: 1.45rem;
+	color: var(--text-dark);
+	margin: 3rem 0 1.25rem;
+	font-weight: 700;
 }
 
 .content p {
-    margin-bottom: 1.5rem;
-    text-align: justify;
+	margin-bottom: 1.5rem;
+	text-align: justify;
 }
 
 .imageFigure {
-    margin: 2.5rem 0;
-    text-align: center;
+	margin: 2.5rem 0;
+	text-align: center;
 }
 
 .articleImage {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 0.8rem;
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	margin-bottom: 0.8rem;
 }
 
 .imageCaption {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-style: italic;
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	font-style: italic;
 }
 
 .quote {
-    font-size: 1.15rem;
-    font-style: italic;
-    color: var(--navy);
-    padding: 1.5rem 2rem;
-    background: var(--pearl);
-    border-left: 4px solid var(--chrome);
-    border-radius: 0 8px 8px 0;
-    margin: 2.5rem 0;
-    line-height: 1.7;
+	font-size: 1.15rem;
+	font-style: italic;
+	color: var(--navy);
+	padding: 1.5rem 2rem;
+	background: var(--pearl);
+	border-left: 4px solid var(--chrome);
+	border-radius: 0 8px 8px 0;
+	margin: 2.5rem 0;
+	line-height: 1.7;
 }
 
 @media (max-width: 768px) {
-    .articleWrapper {
-        padding: 2rem 1.5rem;
-        border-radius: 8px;
-    }
-    
-    .title {
-        font-size: 1.8rem;
-    }
-    
-    .content {
-        font-size: 1rem;
-    }
+	.bannerTitle {
+		font-size: 2.2rem;
+	}
+
+	.newsCard {
+		flex-direction: column;
+	}
+
+	.newsImageFrame {
+		width: 100%;
+		height: 220px;
+	}
+
+	.newsInfo {
+		padding: 1.5rem;
+	}
+
+	.articleWrapper {
+		padding: 2rem 1.5rem;
+		border-radius: 8px;
+		margin-top: 2rem;
+	}
+
+	.title {
+		font-size: 1.8rem;
+	}
+
+	.content {
+		font-size: 1rem;
+	}
 }
