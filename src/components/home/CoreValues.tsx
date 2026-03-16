@@ -1,18 +1,28 @@
 'use client';
 
 import {
-    FiCheckSquare, FiRepeat, FiStar, FiHeart,
-    FiFeather, FiLayers, FiShield, FiSun
-} from 'react-icons/fi';
+    PiSealCheckDuotone, 
+    PiArrowsClockwiseDuotone, 
+    PiSparkleDuotone, 
+    PiHandshakeDuotone,
+    PiFeatherDuotone, 
+    PiCubeDuotone, 
+    PiShieldCheckDuotone, 
+    PiLightbulbDuotone
+} from 'react-icons/pi';
 import { useScrollReveal } from '@/hooks/useAnimations';
 import { coreValues } from '@/data/siteData';
 import styles from './HomePage.module.css';
 
 const iconMap: Record<string, React.ReactNode> = {
-    FiCheckSquare: <FiCheckSquare />, FiRepeat: <FiRepeat />,
-    FiStar: <FiStar />, FiHeart: <FiHeart />,
-    FiFeather: <FiFeather />, FiLayers: <FiLayers />,
-    FiShield: <FiShield />, FiSun: <FiSun />,
+    PiSealCheckDuotone: <PiSealCheckDuotone />, 
+    PiArrowsClockwiseDuotone: <PiArrowsClockwiseDuotone />,
+    PiSparkleDuotone: <PiSparkleDuotone />, 
+    PiHandshakeDuotone: <PiHandshakeDuotone />,
+    PiFeatherDuotone: <PiFeatherDuotone />, 
+    PiCubeDuotone: <PiCubeDuotone />,
+    PiShieldCheckDuotone: <PiShieldCheckDuotone />, 
+    PiLightbulbDuotone: <PiLightbulbDuotone />,
 };
 
 export default function CoreValues() {

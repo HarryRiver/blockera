@@ -6,14 +6,14 @@ export const stats = [
 ];
 
 export const coreValues = [
-    { title: 'CHUẨN MỰC', description: 'Mọi sự chuyên nghiệp bắt đầu từ chuẩn mực rõ ràng', icon: 'FiCheckSquare' },
-    { title: 'NHẤT QUÁN', description: 'Uy tín được xây bằng sự lặp lại đáng tin', icon: 'FiRepeat' },
-    { title: 'HIỆN DIỆN', description: 'Phong thái, khí chất là cách năng lực được cảm nhận', icon: 'FiStar' },
-    { title: 'NGHI THỨC', description: 'Nghi thức là ngôn ngữ của sự tôn trọng và vị thế', icon: 'FiHeart' },
-    { title: 'TINH TẾ', description: 'Giao tiếp đẳng cấp nằm ở sự điều chỉnh', icon: 'FiFeather' },
-    { title: 'KIẾN TRÚC', description: 'Thương hiệu cá nhân không được tạo, mà được thiết kế', icon: 'FiLayers' },
-    { title: 'BỀN VỮNG', description: 'Sự chuyên nghiệp thật sự trở thành thói quen, không phải nỗ lực', icon: 'FiShield' },
-    { title: 'TRUYỀN CẢM HỨNG', description: 'Lan tỏa giá trị tích cực qua phong thái và hành động mỗi ngày', icon: 'FiSun' },
+    { title: 'CHUẨN MỰC', description: 'Mọi sự chuyên nghiệp bắt đầu từ chuẩn mực rõ ràng', icon: 'PiSealCheckDuotone' },
+    { title: 'NHẤT QUÁN', description: 'Uy tín được xây bằng sự lặp lại đáng tin', icon: 'PiArrowsClockwiseDuotone' },
+    { title: 'HIỆN DIỆN', description: 'Phong thái, khí chất là cách năng lực được cảm nhận', icon: 'PiSparkleDuotone' },
+    { title: 'NGHI THỨC', description: 'Nghi thức là ngôn ngữ của sự tôn trọng và vị thế', icon: 'PiHandshakeDuotone' },
+    { title: 'TINH TẾ', description: 'Giao tiếp đẳng cấp nằm ở sự điều chỉnh', icon: 'PiFeatherDuotone' },
+    { title: 'KIẾN TRÚC', description: 'Thương hiệu cá nhân không được tạo, mà được thiết kế', icon: 'PiCubeDuotone' },
+    { title: 'BỀN VỮNG', description: 'Sự chuyên nghiệp thật sự trở thành thói quen, không phải nỗ lực', icon: 'PiShieldCheckDuotone' },
+    { title: 'TRUYỀN CẢM HỨNG', description: 'Lan tỏa giá trị tích cực qua phong thái và hành động mỗi ngày', icon: 'PiLightbulbDuotone' },
 ];
 
 export const socialLinks = [
