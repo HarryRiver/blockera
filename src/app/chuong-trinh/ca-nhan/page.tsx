@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiArrowRight, FiCheck } from 'react-icons/fi';
+import { FiArrowRight, FiCheck, FiUser, FiBriefcase, FiHome } from 'react-icons/fi';
 import { HiOutlineUser } from 'react-icons/hi2';
 import styles from '../detail.module.css';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -57,6 +57,66 @@ const outcomes = [
     'Nghệ thuật tạo ấn tượng chuyên nghiệp trong bối cảnh quan trọng',
     'Phong thái trở thành một phần tự nhiên của năng lực cá nhân',
     'Khi chuẩn mực và sự tự tin, phong thái rõ ràng, chuyên nghiệp trở thành tự nhiên',
+];
+
+const participantTargets = [
+    'Lãnh đạo, quản lý các cấp',
+    'Chuyên viên, nhân sự chuyên môn',
+    'Đội ngũ kinh doanh, chăm sóc khách hàng',
+    'Nhân sự hậu cần, vận hành, hỗ trợ',
+    'Cá nhân xây dựng hình ảnh nghề nghiệp',
+    'Cán bộ công vụ, đơn vị hành chính nhà nước',
+];
+
+const trainingModules = [
+    'Chuẩn hóa phong thái hiện diện theo vai trò',
+    'Giao tiếp thể hiện sự tôn trọng và hiệu quả',
+    'Ngôn ngữ hình thể, giọng nói và biểu đạt chuyên nghiệp',
+    'Nghi thức giao tiếp, ứng xử trong môi trường công việc',
+    'Kỹ năng xử lý tình huống và quản trị cảm xúc',
+    'Định vị hình ảnh cá nhân và đội ngũ',
+];
+
+const implementationMethods = [
+    {
+        step: 1,
+        title: 'Chuẩn hóa nhận thức',
+        description: 'Nền tảng của phong thái - hiểu rõ vai trò và trách nhiệm',
+    },
+    {
+        step: 2,
+        title: 'Chuẩn hóa hành động',
+        description: 'Chuyển đổi nhận thức thành thực hành - hiệu chỉnh hành động thực tế',
+    },
+    {
+        step: 3,
+        title: 'Chuẩn hóa môi trường',
+        description: 'Duy trì thay đổi - tích hợp vào vận hành tổ chức',
+    },
+];
+
+const featuredProgramsFromHome = [
+    {
+        icon: <FiUser />,
+        title: 'Cá nhân',
+        subtitle: 'Xây dựng thương hiệu',
+        description: 'Tự tin dựa trên chuẩn mực, giao tiếp thuyết phục, phong thái phù hợp vai trò và vị trí công việc.',
+        href: '/chuong-trinh/ca-nhan',
+    },
+    {
+        icon: <FiBriefcase />,
+        title: 'Doanh nghiệp',
+        subtitle: 'Tập đoàn & Công ty',
+        description: 'Chuẩn hóa phong thái, nghi thức giao tiếp, trang phục công sở và nghệ thuật tạo ấn tượng chuyên nghiệp.',
+        href: '/chuong-trinh/doanh-nghiep',
+    },
+    {
+        icon: <FiHome />,
+        title: 'Cơ quan nhà nước',
+        subtitle: 'Đơn vị hành chính',
+        description: 'Chuẩn hóa phong thái giao tiếp công vụ, xây dựng môi trường làm việc văn minh, nhất quán.',
+        href: '/chuong-trinh/co-quan-nha-nuoc',
+    },
 ];
 
 export default function CaNhanPage() {
@@ -157,6 +217,78 @@ export default function CaNhanPage() {
                                 </div>
                             </ScrollReveal>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className={`section ${styles.trainingContentSection}`}>
+                <div className="container">
+                    <ScrollReveal>
+                        <span className="section-label">NỘI DUNG TRIỂN KHAI</span>
+                        <h2 className="section-title center">Tổng quan chương trình đào tạo</h2>
+                    </ScrollReveal>
+
+                    <div className={styles.trainingTopGrid}>
+                        <ScrollReveal delay={80}>
+                            <article className={styles.trainingInfoCard}>
+                                <h3 className={styles.trainingInfoTitle}>1. Đối tượng tham gia</h3>
+                                <ul className={styles.trainingChecklist}>
+                                    {participantTargets.map((item) => (
+                                        <li key={item}>
+                                            <FiCheck />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </article>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={180}>
+                            <article className={styles.trainingInfoCard}>
+                                <h3 className={styles.trainingInfoTitle}>2. Nội dung đào tạo</h3>
+                                <ul className={styles.trainingChecklist}>
+                                    {trainingModules.map((item) => (
+                                        <li key={item}>
+                                            <FiCheck />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </article>
+                        </ScrollReveal>
+                    </div>
+
+                    <div className={styles.trainingBottomGrid}>
+                        <ScrollReveal delay={80}>
+                            <article className={styles.trainingInfoCard}>
+                                <h3 className={styles.trainingInfoTitle}>3. Phương pháp triển khai</h3>
+                                <div className={styles.trainingMethodGrid}>
+                                    {implementationMethods.map((phase) => (
+                                        <div key={phase.step} className={styles.trainingMethodItem}>
+                                            <span className={styles.trainingMethodStep}>{phase.step}</span>
+                                            <h4>{phase.title}</h4>
+                                            <p>{phase.description}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </article>
+                        </ScrollReveal>
+
+                        <ScrollReveal delay={180}>
+                            <article className={styles.trainingInfoCard}>
+                                <h3 className={styles.trainingInfoTitle}>4. Các chương trình đã đào tạo</h3>
+                                <div className={styles.trainingProgramGrid}>
+                                    {featuredProgramsFromHome.map((program) => (
+                                        <Link key={program.title} href={program.href} className={styles.trainingProgramCard}>
+                                            <div className={styles.trainingProgramIcon}>{program.icon}</div>
+                                            <h4>{program.title}</h4>
+                                            <span>{program.subtitle}</span>
+                                            <p>{program.description}</p>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </article>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>

@@ -2,7 +2,8 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import styles from './about.module.css';
-import { FiEye, FiTarget, FiCheckSquare, FiRefreshCw, FiStar, FiHeart, FiFeather, FiBox, FiShield, FiSun, FiAward, FiUsers, FiBook, FiGlobe, FiCompass } from 'react-icons/fi';
+import { FiCheckSquare, FiRefreshCw, FiStar, FiHeart, FiFeather, FiBox, FiShield, FiSun, FiAward, FiUsers, FiBook, FiGlobe } from 'react-icons/fi';
+import { HiOutlineEye, HiOutlineTrophy } from 'react-icons/hi2';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 
@@ -149,7 +150,7 @@ export default function AboutPage() {
                             <div className={styles.vmCard}>
                                 <div className={styles.vmIcon}>
                                     <div className={styles.vmIconBg}></div>
-                                    <FiCompass className={styles.vmIconSvg} />
+                                    <HiOutlineEye className={styles.vmIconSvg} />
                                 </div>
                                 <h3>Tầm nhìn</h3>
                                 <p>
@@ -164,7 +165,7 @@ export default function AboutPage() {
                             <div className={styles.vmCard}>
                                 <div className={styles.vmIcon}>
                                     <div className={styles.vmIconBg}></div>
-                                    <FiAward className={styles.vmIconSvg} />
+                                    <HiOutlineTrophy className={styles.vmIconSvg} />
                                 </div>
                                 <h3>Sứ mệnh</h3>
                                 <p>

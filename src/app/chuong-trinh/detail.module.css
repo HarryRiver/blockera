@@ -398,4 +398,158 @@
 
     .cta { padding: 3.5rem 0; }
     .ctaTitle { font-size: 1.5rem; }
+
+    .trainingTopGrid,
+    .trainingBottomGrid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Expanded Training Content */
+.trainingContentSection {
+    background: var(--ivory);
+    padding: 5rem 0;
+}
+
+.trainingTopGrid,
+.trainingBottomGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.trainingBottomGrid {
+    margin-top: 1.25rem;
+}
+
+.trainingInfoCard {
+    background: var(--white);
+    border: 1px solid rgba(240, 106, 36, 0.12);
+    border-radius: 12px;
+    padding: 1.6rem;
+    height: 100%;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+}
+
+.trainingInfoTitle {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.trainingChecklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.trainingChecklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.trainingChecklist li svg {
+    color: var(--chrome);
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+}
+
+.trainingMethodGrid {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.trainingMethodItem {
+    border: 1px solid rgba(240, 106, 36, 0.12);
+    background: rgba(245, 243, 249, 0.55);
+    border-radius: 10px;
+    padding: 0.85rem 0.95rem;
+}
+
+.trainingMethodStep {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(240, 106, 36, 0.12);
+    color: var(--chrome);
+    font-size: 0.76rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.trainingMethodItem h4 {
+    margin: 0 0 0.35rem;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+}
+
+.trainingMethodItem p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--text-body);
+    line-height: 1.55;
+}
+
+.trainingProgramGrid {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.trainingProgramCard {
+    display: block;
+    border: 1px solid rgba(14, 19, 48, 0.1);
+    border-radius: 10px;
+    padding: 0.95rem 1rem;
+    background: var(--white);
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.trainingProgramCard:hover {
+    border-color: rgba(240, 106, 36, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+.trainingProgramIcon {
+    font-size: 1rem;
+    color: var(--chrome);
+    margin-bottom: 0.4rem;
+}
+
+.trainingProgramCard h4 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--navy);
+}
+
+.trainingProgramCard span {
+    display: block;
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--chrome);
+}
+
+.trainingProgramCard p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--text-body);
+    line-height: 1.6;
 }

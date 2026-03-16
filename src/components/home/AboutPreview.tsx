@@ -8,7 +8,7 @@ import styles from './HomePage.module.css';
 
 const photos = [
     { src: '/images/hellen-1.png', alt: 'Hellen Thanh Thùy - Sự kiện' },
-    { src: '/images/hellen-2.png', alt: 'Hellen Thanh Thùy - Đào tạo' },
+    { src: '/images/hellen-5.JPG', alt: 'Hellen Thanh Thùy - Đào tạo' },
     { src: '/images/hellen-4.JPG', alt: 'Hellen Thanh Thùy - Đào tạo thực chiến' },
 ];
 

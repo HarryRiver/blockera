@@ -17,7 +17,7 @@ export default function Header() {
     const pathname = usePathname();
 
     useEffect(() => {
-        setMounted(true);
+        requestAnimationFrame(() => setMounted(true));
     }, []);
 
     useEffect(() => {
