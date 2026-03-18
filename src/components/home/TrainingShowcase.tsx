@@ -16,9 +16,9 @@ const showcasePrograms = [
 			"/images/bg/hero-ca-nhan.png",
 			"/images/hellen-1.png",
 		],
-		albumHref: "/thu-vien/hinh-anh",
+		albumHref: "/thu-vien",
 		videoThumb: "/images/bg/hero-ca-nhan.png",
-		videoHref: "/thu-vien/video",
+		videoHref: "/thu-vien",
 	},
 	{
 		id: "doanh-nghiep",
@@ -29,9 +29,9 @@ const showcasePrograms = [
 			"/images/bg/hero-doanh-nghiep.png",
 			"/images/hellen-2.png",
 		],
-		albumHref: "/thu-vien/hinh-anh",
+		albumHref: "/thu-vien",
 		videoThumb: "/images/bg/hero-doanh-nghiep.png",
-		videoHref: "/thu-vien/video",
+		videoHref: "/thu-vien",
 	},
 	{
 		id: "co-quan",
@@ -42,9 +42,9 @@ const showcasePrograms = [
 			"/images/bg/hero-co-quan.png",
 			"/images/hellen-3.png",
 		],
-		albumHref: "/thu-vien/hinh-anh",
+		albumHref: "/thu-vien",
 		videoThumb: "/images/bg/hero-co-quan.png",
-		videoHref: "/thu-vien/video",
+		videoHref: "/thu-vien",
 	},
 ];
 

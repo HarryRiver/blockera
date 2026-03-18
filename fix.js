@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 let content = fs.readFileSync('src/components/home/HomePage.module.css', 'utf8');
 
 // Replace purple/lavender RGBs with orange/peach RGBs

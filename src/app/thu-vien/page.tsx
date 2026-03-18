@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { FiImage, FiVideo, FiCalendar } from 'react-icons/fi';
-import Link from 'next/link';
+import { FiExternalLink } from 'react-icons/fi';
+import Image from 'next/image';
 import BreadcrumbJsonLd from '@/components/seo/BreadcrumbJsonLd';
 import styles from './gallery.module.css';
 
@@ -11,10 +11,31 @@ export const metadata: Metadata = {
     alternates: { canonical: 'https://blockeraedu.com/thu-vien' },
 };
 
-const categories = [
-    { icon: <FiImage />, title: 'Hình ảnh', desc: 'Ảnh các khóa đào tạo, sự kiện và hoạt động', href: '/thu-vien/hinh-anh', count: 'Đang cập nhật' },
-    { icon: <FiVideo />, title: 'Video', desc: 'Video chia sẻ kiến thức và cảm nhận học viên', href: '/thu-vien/video', count: 'Đang cập nhật' },
-    { icon: <FiCalendar />, title: 'Sự kiện', desc: 'Hình ảnh các sự kiện nổi bật', href: '/thu-vien/su-kien', count: 'Đang cập nhật' },
+const albumCategories = [
+    {
+        title: 'Cơ quan Nhà nước',
+        albums: [
+            { name: 'Album Hoạt động CQNN 1', href: 'https://photos.app.goo.gl/5mw85sUbhxQdbtP88', image: '/images/CQNN_1.jpeg' },
+            { name: 'Album Hoạt động CQNN 2', href: 'https://photos.app.goo.gl/kGuYcJB1kg6BjSdu6', image: '/images/CQNN_2.JPG' },
+            { name: 'Album Hoạt động CQNN 3', href: 'https://photos.app.goo.gl/fHxt22H5KP5hcLjT8', image: '/images/CQNN_3.JPG' },
+            { name: 'Album Hoạt động CQNN 4', href: 'https://photos.app.goo.gl/Aku8ooooYuZ8tTyQ7', image: '/images/CQNN_4.JPG' },
+            { name: 'Album Hoạt động CQNN 5', href: 'https://photos.app.goo.gl/9axyPb2Ad2Hig9NJ7', image: '/images/CQNN_5.JPG' },
+        ]
+    },
+    {
+        title: 'Doanh nghiệp',
+        albums: [
+            { name: 'Album Đào tạo Doanh nghiệp 1', href: 'https://photos.app.goo.gl/VU5iEW4jqDRqQD4T9', image: '/images/DN_1.JPG' },
+            { name: 'Album Đào tạo Doanh nghiệp 2', href: 'https://photos.app.goo.gl/TdLModkmsXF8d7xv8', image: '/images/DN_2.JPG' },
+        ]
+    },
+    {
+        title: 'Hoa hậu & Người đẹp',
+        albums: [
+            { name: 'Album Hoa hậu ngành làm đẹp 1', href: 'https://photos.app.goo.gl/jY9hcK2RuwMgN4AVA', image: '/images/HH_1.JPG' },
+            { name: 'Album Hoa hậu ngành làm đẹp 2', href: 'https://photos.app.goo.gl/iz61NPJciTkUyjKK7', image: '/images/HH_2.JPG' },
+        ]
+    }
 ];
 
 export default function GalleryPage() {
@@ -34,19 +55,39 @@ export default function GalleryPage() {
 
             <section className={`section ${styles.catSection}`}>
                 <div className="container">
-                    <div className={styles.catGrid}>
-                        {categories.map((cat) => (
-                            <Link key={cat.title} href={cat.href} className={styles.catCard}>
-                                <div className={styles.catIcon}>{cat.icon}</div>
-                                <h2 className={styles.catTitle}>{cat.title}</h2>
-                                <p className={styles.catDesc}>{cat.desc}</p>
-                                <span className={styles.catCount}>{cat.count}</span>
-                            </Link>
-                        ))}
-                    </div>
-                    <div className={styles.placeholder}>
-                        <p>Nội dung thư viện đang được cập nhật. Vui lòng quay lại sau.</p>
-                    </div>
+                    {albumCategories.map((group) => (
+                        <div key={group.title} className={styles.categoryGroup}>
+                            <div className={styles.categoryHeader}>
+                                <h2 className={styles.categoryTitle}>{group.title}</h2>
+                            </div>
+                            <div className={styles.albumGrid}>
+                                {group.albums.map((album, idx) => (
+                                    <a 
+                                        key={idx} 
+                                        href={album.href} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className={styles.albumCard}
+                                    >
+                                        <div style={{ position: 'relative', width: '100%', aspectRatio: '16/10' }}>
+                                            <Image 
+                                                src={album.image} 
+                                                alt={album.name}
+                                                fill
+                                                className={styles.albumImage}
+                                            />
+                                        </div>
+                                        <div className={styles.albumContent}>
+                                            <h3 className={styles.albumName}>{album.name}</h3>
+                                            <span className={styles.albumLinkText}>
+                                                Xem album <FiExternalLink />
+                                            </span>
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </>
