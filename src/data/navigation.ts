@@ -12,14 +12,6 @@ export const navigation = [
     },
     { label: 'Phương pháp đào tạo', href: '/phuong-phap-dao-tao' },
     { label: 'Tin tức', href: '/tin-tuc' },
-    {
-        label: 'Thư viện',
-        href: '/thu-vien',
-        children: [
-            { label: 'Hình ảnh', href: '/thu-vien/hinh-anh' },
-            { label: 'Video', href: '/thu-vien/video' },
-            { label: 'Sự kiện', href: '/thu-vien/su-kien' },
-        ]
-    },
+    { label: 'Thư viện', href: '/thu-vien' },
     { label: 'Liên hệ', href: '/lien-he' },
 ];
